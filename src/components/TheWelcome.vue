@@ -57,7 +57,7 @@ import SupportIcon from "./icons/IconSupport.vue";
     <a target="_blank" href="https://github.com/vuejs/awesome-vue"
       >Awesome Vue</a
     >
-    a visit.
+    a visit. Make sure to visit the <RouterLink to="/about">About Page</RouterLink>.
   </WelcomeItem>
 
   <WelcomeItem>
