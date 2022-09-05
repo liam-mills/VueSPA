@@ -1,13 +1,9 @@
 <script>
-  import sweetalert from 'sweetalert';
+  import flash from '@/mixins/flash';
 
   export default {
-    methods: {
-      flash(message) {
-        sweetalert('Success', message, 'success');
-      }
-    }
-  };
+    mixins: [flash]
+  }
 </script>
 
 <template>
