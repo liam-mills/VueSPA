@@ -7,7 +7,7 @@
 <template>
   <main>
     <p>
-      <button @click="flash('test')">Click Me</button>
+      <button @click="flash('Title', 'Message')">Click Me</button>
     </p>
   </main>
 </template>

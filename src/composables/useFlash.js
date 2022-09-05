@@ -1,8 +1,8 @@
 import sweetalert from 'sweetalert';
 
 export function useFlash() {
-    function flash(message) {
-        return sweetalert('Success', message, 'success');
+    function flash(title, message, level = 'success') {
+        return sweetalert(title, message, level);
     }
 
     return { flash };
