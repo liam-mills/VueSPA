@@ -1,20 +1,19 @@
-<script setup>
-import TheWelcome from "@/components/TheWelcome.vue";
+<script>
+  import sweetalert from 'sweetalert';
 
-let message = $ref('Default Message');
-
-setTimeout(() => {
-  message = 'Updated Message';
-}, 2000);
+  export default {
+    methods: {
+      flash(message) {
+        sweetalert('Success', message, 'success');
+      }
+    }
+  };
 </script>
 
 <template>
   <main>
-    <TheWelcome />
-
-    <p>{{ message }}</p>
     <p>
-      <input type="text" v-model="message" />
+      <button @click="flash('test')">Click Me</button>
     </p>
   </main>
 </template>
