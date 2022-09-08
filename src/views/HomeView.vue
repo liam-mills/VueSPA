@@ -1,7 +1,7 @@
 <script setup>
   import { useStorage } from '@/composables/useStorage';
 
-  let food = useStorage('food');
+  let food = useStorage('food', 'pizza');
 
   setTimeout(() => {
     food.value = 'changed';
