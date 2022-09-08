@@ -10,7 +10,11 @@ export function useStorage(key) {
     })
 
     function write() {
-        localStorage.setItem(key, value.value);
+        if (value.value === '') {
+            localStorage.removeItem(key);
+        } else {
+            localStorage.setItem(key, value.value);
+        }
     }
 
     return value;
