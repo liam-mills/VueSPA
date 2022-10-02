@@ -1,22 +1,20 @@
 <script setup>
-  import { useStorage } from '@/composables/useStorage';
+  function onTabPress(e) {
+    let textarea = e.target;
+    let val = textarea.value,
+    start = textarea.selectionStart,
+    end = textarea.selectionEnd;
 
-  let food = useStorage('food', 'pizza');
-  let colour = useStorage('colour');
-  let obj = useStorage('obj', { test: 'test' });
+    textarea.value = val.substring(0, start) + '\t' + val.substring(end);
 
-  setTimeout(() => {
-    obj.value.test = 'test1';
-  }, 3000);
+    textarea.selectionStart = textarea.selectionEnd = start + 1;
+  }
 </script>
 
 <template>
   <main>
-    <p>
-      Favourite food? <input type="text" v-model="food">
-    </p>
-    <p>
-      Favourite colour? <input type="text" v-model="colour">
-    </p>
+    <form action="">
+      <textarea @keydown.tab.prevent="onTabPress" style="width:100%; height: 300px;">Hello.</textarea>
+    </form>
   </main>
 </template>
