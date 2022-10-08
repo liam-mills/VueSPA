@@ -18,5 +18,8 @@ defineProps({ quiz: Object });
 
 let name = ref('John Doe');
 
-provide('name', name);
+provide('name', {
+    name,
+    changeName: () => name.value = 'Changed'
+});
 </script>
