@@ -13,6 +13,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "@quiz": fileURLToPath(new URL("./src/components/quiz", import.meta.url)),
     },
   },
 });
