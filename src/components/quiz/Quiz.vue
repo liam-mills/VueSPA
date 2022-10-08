@@ -1,25 +1,18 @@
 <template>
-    <h1 style="margin-bottom:2rem;">{{ name }}</h1>
-
-    <QuizHeader />
+    <QuizHeader :quiz="quiz" />
 
     <QuizQuestion />
 
-    <QuizFooter :quiz="quiz" />
+    <QuizFooter />
 </template>
 
 <script setup>
 import QuizHeader from "@quiz/QuizHeader.vue";
 import QuizQuestion from "@quiz/QuizQuestion.vue";
 import QuizFooter from "@quiz/QuizFooter.vue";
-import { ref, provide } from "vue";
+import { provide } from "vue";
 
-defineProps({ quiz: Object });
+let props = defineProps({ quiz: Object });
 
-let name = ref('John Doe');
-
-provide('name', {
-    name,
-    changeName: () => name.value = 'Changed'
-});
+provide('quiz', props.quiz);
 </script>

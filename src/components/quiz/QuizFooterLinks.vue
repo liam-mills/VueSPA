@@ -1,6 +1,6 @@
 <template>
     <div>
-        <button @click="changeName">{{ name }}</button>
+        <h5>{{ quiz.name }}</h5>
 
         <ul>
             <li><a href="#">Get a Job</a></li>
@@ -12,5 +12,5 @@
 <script setup>
 import { inject } from "vue";
 
-let { name, changeName } = inject('name');
+let quiz = inject('quiz');
 </script>
